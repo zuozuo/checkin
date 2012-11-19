@@ -7,6 +7,7 @@
 //
 
 #import "CtquanAppDelegate.h"
+#import "CtquanSignInViewController.h"
 
 @implementation CtquanAppDelegate
 
@@ -14,13 +15,15 @@
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
-    return YES;
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+	if ([[CtquanUser current] existsLocally]) [self skipSignInView];
+	return YES;
+}
+
+- (void)skipSignInView {
+	UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+	UITabBarController *tabBar = [storyboard instantiateViewControllerWithIdentifier:@"tabBarController"];
+	self.window.rootViewController = tabBar;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
