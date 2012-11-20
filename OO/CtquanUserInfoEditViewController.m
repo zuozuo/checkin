@@ -22,9 +22,6 @@
     }
     return self;
 }
-- (IBAction)test:(id)sender {
-//	[self presentViewController:<#(UIViewController *)#> animated:<#(BOOL)#> completion:<#^(void)completion#>]
-}
 
 - (void)viewDidLoad
 {

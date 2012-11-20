@@ -18,8 +18,8 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	CtquanUser *currentUser = [CtquanUser current];
-	NSNumber *distance = [NSNumber numberWithFloat:[currentUser.distance floatValue]*2];
-	NSNumber *duration = [NSNumber numberWithFloat:([currentUser.duration floatValue]*2+10)];
+	NSNumber *duration = [NSNumber numberWithFloat:[currentUser.duration floatValue]*2];
+	NSNumber *distance = [NSNumber numberWithFloat:([currentUser.distance floatValue]*2+10)];
 	UIButton *distanceButton = (UIButton *)[self.view viewWithTag:[distance integerValue]];
 	UIButton *durationButton = (UIButton *)[self.view viewWithTag:[duration integerValue]];
 	durationButton.backgroundColor = [UIColor blueColor];

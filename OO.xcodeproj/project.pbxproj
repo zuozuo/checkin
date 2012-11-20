@@ -39,7 +39,7 @@
 		18CC282D1653A95A0031D14F /* CtquanUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CC282C1653A95A0031D14F /* CtquanUserViewController.m */; };
 		18E4A0F9165B4F8900679D70 /* CtquanAvatarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E4A0F8165B4F8900679D70 /* CtquanAvatarViewController.m */; };
 		18E4A0FD165B4FE600679D70 /* CtquanUserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E4A0FC165B4FE600679D70 /* CtquanUserInfoViewController.m */; };
-		18E4A100165B506600679D70 /* CtquanUserInfoEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E4A0FF165B506500679D70 /* CtquanUserInfoEditViewController.m */; };
+		18E4A10B165B6A2E00679D70 /* CtquanUserInfoEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E4A10A165B6A2E00679D70 /* CtquanUserInfoEditViewController.m */; };
 		18E675BA16560A14000C66C4 /* CtquanInvitationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E675B916560A14000C66C4 /* CtquanInvitationViewController.m */; };
 		18E675E31656444D000C66C4 /* avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 18E675E21656444D000C66C4 /* avatar.png */; };
 		18E675E61656481C000C66C4 /* CtquanInvitation.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E675E51656481B000C66C4 /* CtquanInvitation.m */; };
@@ -101,8 +101,8 @@
 		18E4A0F8165B4F8900679D70 /* CtquanAvatarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CtquanAvatarViewController.m; sourceTree = "<group>"; };
 		18E4A0FB165B4FE600679D70 /* CtquanUserInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CtquanUserInfoViewController.h; sourceTree = "<group>"; };
 		18E4A0FC165B4FE600679D70 /* CtquanUserInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CtquanUserInfoViewController.m; sourceTree = "<group>"; };
-		18E4A0FE165B506500679D70 /* CtquanUserInfoEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CtquanUserInfoEditViewController.h; sourceTree = "<group>"; };
-		18E4A0FF165B506500679D70 /* CtquanUserInfoEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CtquanUserInfoEditViewController.m; sourceTree = "<group>"; };
+		18E4A109165B6A2E00679D70 /* CtquanUserInfoEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CtquanUserInfoEditViewController.h; sourceTree = "<group>"; };
+		18E4A10A165B6A2E00679D70 /* CtquanUserInfoEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CtquanUserInfoEditViewController.m; sourceTree = "<group>"; };
 		18E675B816560A13000C66C4 /* CtquanInvitationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CtquanInvitationViewController.h; sourceTree = "<group>"; };
 		18E675B916560A14000C66C4 /* CtquanInvitationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CtquanInvitationViewController.m; sourceTree = "<group>"; };
 		18E675E21656444D000C66C4 /* avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = avatar.png; path = ../../../../../Downloads/avatar.png; sourceTree = "<group>"; };
@@ -217,8 +217,8 @@
 				184584251653DF410088450D /* CtquanUser.m */,
 				184968A216539A6E007DB9C4 /* MainStoryboard.storyboard */,
 				18E4A0FB165B4FE600679D70 /* CtquanUserInfoViewController.h */,
-				18E4A0FE165B506500679D70 /* CtquanUserInfoEditViewController.h */,
-				18E4A0FF165B506500679D70 /* CtquanUserInfoEditViewController.m */,
+				18E4A109165B6A2E00679D70 /* CtquanUserInfoEditViewController.h */,
+				18E4A10A165B6A2E00679D70 /* CtquanUserInfoEditViewController.m */,
 				18E4A0FC165B4FE600679D70 /* CtquanUserInfoViewController.m */,
 				1849674B165394B1007DB9C4 /* OO.xcdatamodeld */,
 				1849673A165394B1007DB9C4 /* Supporting Files */,
@@ -332,7 +332,7 @@
 				18B90811165A3EFA00B8D4B4 /* CtquanScreeningViewController.m in Sources */,
 				18E4A0F9165B4F8900679D70 /* CtquanAvatarViewController.m in Sources */,
 				18E4A0FD165B4FE600679D70 /* CtquanUserInfoViewController.m in Sources */,
-				18E4A100165B506600679D70 /* CtquanUserInfoEditViewController.m in Sources */,
+				18E4A10B165B6A2E00679D70 /* CtquanUserInfoEditViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
