@@ -8,6 +8,7 @@
 
 #import "CtquanNearbyUsersViewController.h"
 #import "CtquanInvitation.h"
+#import "CtquanScreeningViewController.h"
 
 @interface CtquanNearbyUsersViewController ()
 

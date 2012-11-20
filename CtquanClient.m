@@ -14,7 +14,7 @@
 + (CtquanClient *)sharedClient {
 	static CtquanClient *client;
 	@synchronized(self) {
-		NSURL *url = [[NSURL alloc] initWithString:@"http://localhost:3000"];
+		NSURL *url = [[NSURL alloc] initWithString:@"http://192.168.1.150:3000"];
 		if (!client) {
 			client = [[CtquanClient alloc] initWithBaseURL:url];
 			[client registerHTTPOperationClass:[AFJSONRequestOperation class]];
