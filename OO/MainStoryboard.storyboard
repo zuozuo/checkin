@@ -729,14 +729,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5FO-n5-cbJ">
-                                        <rect key="frame" x="20" y="20" width="133" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xse-Wt-1ba">
-                                        <rect key="frame" x="184" y="20" width="116" height="21"/>
+                                        <rect key="frame" x="20" y="20" width="280" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -755,7 +748,6 @@
                     <connections>
                         <outlet property="errorMessageLabel" destination="sbW-Mm-xr2" id="Re1-eM-lg6"/>
                         <outlet property="latitude" destination="5FO-n5-cbJ" id="9IB-0b-e0l"/>
-                        <outlet property="longitude" destination="xse-Wt-1ba" id="Kah-8Q-S91"/>
                         <outlet property="textField" destination="kMn-ch-TZd" id="3f6-NL-Pfj"/>
                     </connections>
                 </viewController>

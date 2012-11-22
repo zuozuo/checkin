@@ -73,10 +73,8 @@
 #pragma mark -
 #pragma mark BMKSearchDelegate methods
 - (void)onGetAddrResult:(BMKAddrInfo *)result errorCode:(int)error {
-	NSLog(@"%@", result);
-	NSLog(@"poi---------------%@", result.poiList);
 	NSLog(@"adr---------------%@", result.strAddr);
-	NSLog(@"com---------------%@", result.addressComponent.city);
+	latitude.text = result.strAddr;
 }
 @end
 
