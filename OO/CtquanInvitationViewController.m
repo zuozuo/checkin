@@ -21,13 +21,13 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	mapView.delegate = (id)self;
+	[mapView setShowsUserLocation:YES];
 	search = [[BMKSearch alloc] init];
 	search.delegate = self;
-	[search reverseGeocode:[CtquanUser current].location.coordinate];
-	
-	CtquanUser *u = [CtquanUser current];
-	latitude.text = [NSString stringWithFormat:@"%f", u.location.coordinate.latitude];
-	longitude.text = [NSString stringWithFormat:@"%f", u.location.coordinate.longitude];
+  BMKUserLocation	*location = mapView.userLocation;
+	[search reverseGeocode:location.coordinate];
+//	latitude.text = [NSString stringWithFormat:@"%f", location.coordinate.latitude];
+//	longitude.text = [NSString stringWithFormat:@"%f", location.coordinate.longitude];
 	
 	UIButton *button = (UIButton *)[self.view viewWithTag:1];
 	button.backgroundColor = [UIColor blueColor];
