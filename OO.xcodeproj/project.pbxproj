@@ -37,7 +37,7 @@
 		184968A116539A49007DB9C4 /* CtquanSignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 184968A016539A49007DB9C4 /* CtquanSignInViewController.m */; };
 		184968A316539A6E007DB9C4 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 184968A216539A6E007DB9C4 /* MainStoryboard.storyboard */; };
 		186894B4165DF14F005AF00E /* add_avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 186894B3165DF14F005AF00E /* add_avatar.png */; };
-		186894BC165E007E005AF00E /* libbaidumapapi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 186894BB165E007E005AF00E /* libbaidumapapi.a */; };
+		186894C0165E01EA005AF00E /* libbaidumapapi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 186894BF165E01E9005AF00E /* libbaidumapapi.a */; };
 		18823240165CBF1D00F05833 /* CtquanAvatarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1882323F165CBF1D00F05833 /* CtquanAvatarView.m */; };
 		1882623A165BDE93002C66F9 /* CtquanSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18826239165BDE93002C66F9 /* CtquanSignUpViewController.m */; };
 		18B90811165A3EFA00B8D4B4 /* CtquanScreeningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B90810165A3EFA00B8D4B4 /* CtquanScreeningViewController.m */; };
@@ -138,7 +138,7 @@
 		184968A016539A49007DB9C4 /* CtquanSignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CtquanSignInViewController.m; sourceTree = "<group>"; };
 		184968A216539A6E007DB9C4 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		186894B3165DF14F005AF00E /* add_avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add_avatar.png; sourceTree = "<group>"; };
-		186894BB165E007E005AF00E /* libbaidumapapi.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libbaidumapapi.a; path = "../../../../Downloads/BaiduMapApi_Lib_iOS_1.2.2/libs/Release-iphonesimulator/libbaidumapapi.a"; sourceTree = "<group>"; };
+		186894BF165E01E9005AF00E /* libbaidumapapi.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libbaidumapapi.a; sourceTree = "<group>"; };
 		1882323E165CBF1D00F05833 /* CtquanAvatarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CtquanAvatarView.h; sourceTree = "<group>"; };
 		1882323F165CBF1D00F05833 /* CtquanAvatarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CtquanAvatarView.m; sourceTree = "<group>"; };
 		18826238165BDE93002C66F9 /* CtquanSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CtquanSignUpViewController.h; sourceTree = "<group>"; };
@@ -177,7 +177,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				186894BC165E007E005AF00E /* libbaidumapapi.a in Frameworks */,
 				18E4A183165B7F2900679D70 /* CoreImage.framework in Frameworks */,
 				18E4A181165B7F2000679D70 /* QuartzCore.framework in Frameworks */,
 				18E4A17F165B7F1400679D70 /* ImageIO.framework in Frameworks */,
@@ -193,6 +192,7 @@
 				18496734165394B1007DB9C4 /* Foundation.framework in Frameworks */,
 				18496736165394B1007DB9C4 /* CoreGraphics.framework in Frameworks */,
 				18496738165394B1007DB9C4 /* CoreData.framework in Frameworks */,
+				186894C0165E01EA005AF00E /* libbaidumapapi.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,7 +273,6 @@
 		18496722165394B1007DB9C4 = {
 			isa = PBXGroup;
 			children = (
-				186894BB165E007E005AF00E /* libbaidumapapi.a */,
 				18496739165394B1007DB9C4 /* OO */,
 				18496730165394B1007DB9C4 /* Frameworks */,
 				1849672E165394B1007DB9C4 /* Products */,
@@ -355,6 +354,7 @@
 		1849673A165394B1007DB9C4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				186894BF165E01E9005AF00E /* libbaidumapapi.a */,
 				18006349165DB0040013DC89 /* baiduMap */,
 				18E675E21656444D000C66C4 /* avatar.png */,
 				186894B3165DF14F005AF00E /* add_avatar.png */,
@@ -547,6 +547,8 @@
 					"\"$(SRCROOT)/../../../../Downloads/BaiduMapApi_All_iOS_1.2.2/BaiduMapApiDemo/libs/Release-iphonesimulator\"",
 					"\"$(SRCROOT)/../../../../Downloads/BaiduMapApi_All_iOS_1.2.2/BaiduMapApiDemo/libs/Release-iphoneos\"",
 					"\"$(SRCROOT)/../../../../Downloads/BaiduMapApi_Lib_iOS_1.2.2/libs/Release-iphonesimulator\"",
+					"\"$(SRCROOT)/../../../../Downloads/BaiduMapApi_Lib_iOS_1.2.2 3/libs/Release-iphonesimulator\"",
+					"\"$(SRCROOT)/OO\"",
 				);
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -567,6 +569,8 @@
 					"\"$(SRCROOT)/../../../../Downloads/BaiduMapApi_All_iOS_1.2.2/BaiduMapApiDemo/libs/Release-iphonesimulator\"",
 					"\"$(SRCROOT)/../../../../Downloads/BaiduMapApi_All_iOS_1.2.2/BaiduMapApiDemo/libs/Release-iphoneos\"",
 					"\"$(SRCROOT)/../../../../Downloads/BaiduMapApi_Lib_iOS_1.2.2/libs/Release-iphonesimulator\"",
+					"\"$(SRCROOT)/../../../../Downloads/BaiduMapApi_Lib_iOS_1.2.2 3/libs/Release-iphonesimulator\"",
+					"\"$(SRCROOT)/OO\"",
 				);
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
