@@ -24,8 +24,8 @@
 	[mapView setShowsUserLocation:YES];
 	search = [[BMKSearch alloc] init];
 	search.delegate = self;
-  BMKUserLocation	*location = mapView.userLocation;
-	[search reverseGeocode:location.coordinate];
+	[CtquanUser current].location = (CLLocation *)mapView.userLocation;
+	[search reverseGeocode:[CtquanUser current].location.coordinate];
 //	latitude.text = [NSString stringWithFormat:@"%f", location.coordinate.latitude];
 //	longitude.text = [NSString stringWithFormat:@"%f", location.coordinate.longitude];
 	
