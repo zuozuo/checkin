@@ -8,6 +8,7 @@
 
 #import "CtquanInvitationViewController.h"
 #import "CtquanNearbyUsersViewController.h"
+#import "BMapKit.h"
 
 @interface CtquanInvitationViewController ()
 
@@ -22,6 +23,10 @@
 	button.backgroundColor = [UIColor blueColor];
 	duration = [NSNumber numberWithFloat:0.5];
 	[super viewDidLoad];
+	BMKMapView *mapView = [[BMKMapView alloc] initWithFrame:CGRectMake(0, 0, 320, 480)];
+	self.view = mapView;
+	UIScrollView *tempScrollView=(UIScrollView *)self.view;
+	tempScrollView.contentSize=CGSizeMake(320,640);
 }
 
 - (IBAction)sendButtonPressed:(UIButton *)sender {
@@ -35,7 +40,7 @@
 }
 
 - (IBAction)durationButtonPressed:(UIButton *)sender {
-	for (UIView *view in [self.view subviews])
+	for (UIView *view in [[self.view viewWithTag:100] subviews])
 		if ([view isMemberOfClass:[sender class]])
 			[view performSelector:@selector(setBackgroundColor:) withObject:[UIColor whiteColor]];
 	sender.backgroundColor = [UIColor blueColor];

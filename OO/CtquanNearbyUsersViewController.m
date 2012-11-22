@@ -10,6 +10,12 @@
 #import "CtquanInvitation.h"
 #import "CtquanScreeningViewController.h"
 
+#define kAvatarTag 1
+#define kNameTag 2
+#define kDistanceTag 3
+#define kDurationTag 4
+#define kContentTag 5
+
 @interface CtquanNearbyUsersViewController ()
 
 @end
@@ -22,7 +28,7 @@
 	CtquanUser *currentUser = [CtquanUser current];
 	[currentUser signInLocation];
 	if (currentUser.signInStatus) [self afterSignIn];
-	else [currentUser signinFromController:self];
+//	else [currentUser signInFromController:self];
 	invitationList = [[NSMutableArray alloc] init];
 	[super viewDidLoad];
 }
@@ -61,14 +67,16 @@
 	
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
 	CtquanInvitation *invitation = [[CtquanInvitation alloc] initWithDictionary:[invitationList objectAtIndex:indexPath.row]];
-	UILabel *distance = (UILabel*)[cell viewWithTag:2];
+	UIImageView *imageView = (UIImageView*)[cell viewWithTag:kAvatarTag];
+	[imageView setImageWithURL:[invitation.user thumbAvatarURL]];
+	UILabel *name = (UILabel*)[cell viewWithTag:kNameTag];
+	name.text = invitation.user.username;
+	UILabel *distance = (UILabel*)[cell viewWithTag:kDistanceTag];
 	distance.text = [[CtquanUser current] distanceStringFromLocation:invitation.location];
-	UILabel *time = (UILabel*)[cell viewWithTag:3];
+	UILabel *time = (UILabel*)[cell viewWithTag:kDurationTag];
 	time.text = [invitation endTimeString];
-	UILabel *content = (UILabel*)[cell viewWithTag:4];
+	UILabel *content = (UILabel*)[cell viewWithTag:kContentTag];
 	content.text = invitation.content;
-	
-//	UIImageView *imageView = (UIImageView*)[cell viewWithTag:1];
 //	imageView.image = [UIImage imageNamed:@"avatar.png"];
 	
 	return cell;

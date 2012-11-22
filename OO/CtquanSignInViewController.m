@@ -26,9 +26,9 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)loginButtonPressed:(id)sender {
+- (IBAction)signInButtonPressed:(id)sender {
 	CtquanUser *currentUser = [CtquanUser current];
-	[currentUser signinWith:self.emailField.text andPassword:self.passwordField.text fromController:self];
+	[currentUser signInWith:self.emailField.text andPassword:self.passwordField.text FromController:self];
 }
 
 - (IBAction)backgroundTap:(id)sender {
@@ -37,17 +37,14 @@
 }
 
 - (IBAction)textFieldEditEnd:(UITextField *)sender {
-	if ([sender isEqual:emailField]) {
-		[sender resignFirstResponder];
+	[sender resignFirstResponder];
+	if ([sender isEqual:emailField])
 		[passwordField becomeFirstResponder];
-	} else {
-		[sender resignFirstResponder];
-	}
 }
 
 - (void)afterSignIn {
 	loginError.hidden = YES;
-	[self performSegueWithIdentifier:@"loginToTabBar" sender:self];
+	[self performSegueWithIdentifier:@"signInToTabBar" sender:self];
 }
 
 - (void)failedToSignIn {

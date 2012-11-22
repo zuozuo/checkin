@@ -14,15 +14,26 @@
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
+@synthesize mapManager = _mapManager;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-	if ([[CtquanUser current] existsLocally]) [self skipSignInView];
+	
+	// settings for baidu map
+	_mapManager = [[BMKMapManager alloc] init];
+	BOOL ret = [_mapManager start:@"DA5BFA9EC9F9634A047D0DDEE60B7542937D71A8" generalDelegate:nil];
+	if (!ret) NSLog(@"map manager start failed!");
+	
+	CtquanUser *currentUser = [CtquanUser current];
+	if ([currentUser existsLocally]) {
+		UIViewController *isSignIn = [[CtquanStoryBoard main] instantiateViewControllerWithIdentifier:@"isSignInView"];
+		self.window.rootViewController = isSignIn;
+		[currentUser signInFromController:self];
+	}
 	return YES;
 }
 
-- (void)skipSignInView {
-	UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
-	UITabBarController *tabBar = [storyboard instantiateViewControllerWithIdentifier:@"tabBarController"];
+- (void)afterSignIn {
+	UITabBarController *tabBar = [[CtquanStoryBoard main] instantiateViewControllerWithIdentifier:@"tabBarController"];
 	self.window.rootViewController = tabBar;
 }
 

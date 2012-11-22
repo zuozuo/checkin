@@ -11,5 +11,6 @@
 @interface CtquanClient : AFHTTPClient
 
 + (CtquanClient *)sharedClient;
-
+- (void)uplodaAvatarWith:(NSDictionary *)imageInfo FromController:(UIViewController *)controller;
+	
 @end

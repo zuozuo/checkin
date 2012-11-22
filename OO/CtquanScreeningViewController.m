@@ -20,9 +20,11 @@
 	CtquanUser *currentUser = [CtquanUser current];
 	NSNumber *duration = [NSNumber numberWithFloat:[currentUser.duration floatValue]*2];
 	NSNumber *distance = [NSNumber numberWithFloat:([currentUser.distance floatValue]*2+10)];
+	if ([duration integerValue] > 0) {
+		UIButton *durationButton = (UIButton *)[self.view viewWithTag:[duration integerValue]];
+		durationButton.backgroundColor = [UIColor blueColor];
+	}
 	UIButton *distanceButton = (UIButton *)[self.view viewWithTag:[distance integerValue]];
-	UIButton *durationButton = (UIButton *)[self.view viewWithTag:[duration integerValue]];
-	durationButton.backgroundColor = [UIColor blueColor];
 	distanceButton.backgroundColor = [UIColor blueColor];
 }
 

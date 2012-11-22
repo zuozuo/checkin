@@ -11,6 +11,7 @@
 
 #define kNameKey @"name"
 #define kEmailKey @"email"
+#define kAvatarKey @"avatar_file_name"
 #define kUserIdKey @"user_id"
 #define kUsernameKey @"username"
 #define kPasswordKey @"password"
@@ -21,7 +22,7 @@
 
 @implementation CtquanUser
 
-@synthesize user_id, name, email, username, password, location, duration, distance, signInStatus, locationManager;
+@synthesize user_id, name, email, avatar,username, password, location, duration, distance, signInStatus, locationManager;
 
 + (CtquanUser *)current {
 	static CtquanUser *currentUser;
@@ -51,6 +52,14 @@
 	return currentUser;
 }
 
+- (BOOL)existsLocally {
+	return !(!email || !password);
+}
+
+- (CtquanUser *)signIn {
+	return [self signInWith:email andPassword:password FromController:nil];
+}
+
 - (NSNumber *)latitude {
 	return [NSNumber numberWithFloat:location.coordinate.latitude];
 }
@@ -59,23 +68,19 @@
 	return [NSNumber numberWithFloat:location.coordinate.longitude];
 }
 
+- (NSURL *)thumbAvatarURL {
+	return [NSURL URLWithString:[NSString stringWithFormat:@"http://localhost:3000/system/avatars//%@/thumb/%@?%f", user_id, avatar, [NSDate timeIntervalSinceReferenceDate]]];
+}
+
+- (NSURL *)originalAvatarURL {
+	return [NSURL URLWithString:[NSString stringWithFormat:@"http://localhost:3000/system/avatars//%@/original/%@?%f", user_id, avatar, [NSDate timeIntervalSinceReferenceDate]]];
+}
+
 - (void)signInLocation {
 	self.locationManager = [[CLLocationManager alloc] init];
 	locationManager.delegate = self;
 	locationManager.desiredAccuracy = kCLLocationAccuracyBest;
 	[locationManager startUpdatingLocation];
-}
-
-- (CtquanUser *)signin {
-	return [self signinWith:email andPassword:password fromController:nil];
-}
-
-- (CtquanUser *)signinFromController: (UIViewController *)controller {
-	return [self signinWith:email andPassword:password fromController:controller];
-}
-
-- (BOOL)existsLocally {
-	return !(!email || !password);
 }
 
 - (void)sendDistanceAndDuration {
@@ -88,8 +93,50 @@
 					 success:^(AFHTTPRequestOperation *operation, id responseObject){
 					 } failure:^(AFHTTPRequestOperation *operation, NSError *error){
 					 }];
-	
+}
 
+- (void)signUpFromController:(id)controller {
+	CtquanClient *client = [CtquanClient sharedClient];
+	NSDictionary *params = [[NSDictionary alloc] initWithObjectsAndKeys:
+													email, @"user[email]",
+													username, @"user[username",
+													password, @"user[password]",
+													password,@"user[password_confirmation]",
+													nil];
+	[client postPath:@"users" parameters:params
+					 success:^(AFHTTPRequestOperation *operation, id responseObject){
+						 user_id = [responseObject objectForKey:@"id"];
+						 [self performArchive];
+						 if ([controller respondsToSelector:@selector(afterSignUp)])
+							 [controller performSelector:@selector(afterSignUp)];
+					 } failure:^(AFHTTPRequestOperation *operation, NSError *error){
+						 NSLog(@"sign up failure");
+					 }];
+}
+
+- (CtquanUser *)initWithDictionary:(NSDictionary *)dict {
+	self = [super init];
+	if (self) {
+		name = [dict objectForKey:kNameKey];
+		email = [dict objectForKey:kEmailKey];
+		avatar = [dict objectForKey:kAvatarKey];
+		user_id = [dict objectForKey:@"id"];
+		username = [dict objectForKey:kUsernameKey];
+		password = [dict objectForKey:kPasswordKey];
+	}
+	return self;
+}
+
+- (CtquanUser *)signInFromController: (id)controller {
+	return [self signInWith:email andPassword:password FromController:controller];
+}
+
+- (double)distanceFromLocation: (CLLocation *)newLocation {
+	return [location distanceFromLocation:newLocation]/1000;
+}
+
+- (NSString *)distanceStringFromLocation: (CLLocation *)newLocation {
+	return [NSString stringWithFormat:@"%1.2fkm", [self distanceFromLocation:newLocation]];
 }
 
 - (void)getNearbyInvitationsFromController: (UIViewController *)controller {
@@ -110,16 +157,20 @@
 					 }];
 }
 
-
-- (double)distanceFromLocation: (CLLocation *)newLocation {
-	return [location distanceFromLocation:newLocation]/1000;
+- (void)updateWith:(NSDictionary *)params FromController:(UIViewController *)controller {
+	CtquanClient *client = [CtquanClient sharedClient];
+	[client putPath:[NSString stringWithFormat:@"users/%@", user_id] parameters:params
+					 success:^(AFHTTPRequestOperation *operation, id responseObject){
+						 name = [responseObject objectForKey:@"name"];
+						 username = [responseObject objectForKey:@"username"];
+						 [self performArchive];
+						 if ([controller respondsToSelector:@selector(afterUpdated)])
+							 [controller performSelector:@selector(afterUpdated)];
+					 } failure:^(AFHTTPRequestOperation *operation, NSError *error){
+					 }];
 }
 
-- (NSString *)distanceStringFromLocation: (CLLocation *)newLocation {
-	return [NSString stringWithFormat:@"%1.2fkm", [self distanceFromLocation:newLocation]];
-}
-
-- (CtquanUser *)signinWith:(NSString *)loginEmail andPassword:(NSString *)loginPassword fromController:(id)controller {
+- (CtquanUser *)signInWith:(NSString *)loginEmail andPassword:(NSString *)loginPassword FromController:(id)controller {
 	CtquanClient *client = [CtquanClient sharedClient];
 	
 	NSDictionary *params = [[NSDictionary alloc] initWithObjectsAndKeys:
@@ -135,9 +186,9 @@
 					distance = [NSNumber numberWithFloat:[[responseObject objectForKey:@"distance"] floatValue]/2];
 					duration = [NSNumber numberWithFloat:[[responseObject objectForKey:@"duration"] floatValue]/2];
 					password = loginPassword;
+					avatar = [responseObject objectForKey:@"avatar_file_name"];
 					signInStatus= [NSNumber numberWithBool:YES];
 					[self performArchive];
-					
 					if ([controller respondsToSelector:@selector(afterSignIn)])
 						[controller performSelector:@selector(afterSignIn)];
 				}
@@ -177,16 +228,17 @@
 }
 
 - (NSString *)description {
-	return [NSString stringWithFormat:@"User with property list:  \n{ "
-					"email => '%@', "
-					"user_id => '%@' "
-					"username => '%@', "
-					"name => '%@', "
-					"password => '%@', "
-					"duration => '%@', "
-					"distance => '%@', "
-					"hasSignIn => %@ }",
-					email, user_id, username, name, password, duration, distance, [signInStatus boolValue] ? @"YES" : @"NO"];
+	return [NSString stringWithFormat:@"{\n"
+					"          email => '%@', \n"
+					"          user_id => '%@' \n"
+					"          username => '%@', \n"
+					"          name => '%@', \n"
+					"          avatar => '%@', \n"
+					"          password => '%@', \n"
+					"          duration => '%@', \n"
+					"          distance => '%@', \n"
+					"          hasSignIn => %@ \n}",
+					email, user_id, username, name, avatar, password, duration, distance, [signInStatus boolValue] ? @"YES" : @"NO"];
 }
 
 #pragma mark NSCoding

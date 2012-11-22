@@ -13,6 +13,7 @@
 @property (strong, nonatomic) CLLocation *location;
 @property (strong, nonatomic) NSString *content;
 @property (strong, nonatomic) NSDate *endTime;
+@property (strong, nonatomic) CtquanUser *user;
 
 - (NSString *)endTimeString;
 - (CtquanInvitation *)initWithDictionary: (NSDictionary *)dict;

@@ -13,6 +13,7 @@
 
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSString *email;
+@property (strong, nonatomic) NSString *avatar;
 @property (strong, nonatomic) NSNumber *user_id;
 @property (strong, nonatomic) NSString *username;
 @property (strong, nonatomic) NSString *password;
@@ -30,13 +31,19 @@
 - (void)signInLocation;
 - (void)performArchive;
 - (NSNumber *)latitude;
+- (CtquanUser *)signIn;
 - (NSNumber *)longitude;
+- (NSURL *)thumbAvatarURL;
+- (NSURL *)originalAvatarURL;
 - (void)sendDistanceAndDuration;
+- (CtquanUser *)signInFromController: (id)controller;
+- (CtquanUser *)initWithDictionary:(NSDictionary *)dict;
 - (double)distanceFromLocation: (CLLocation *)newLocation;
+- (void)signUpFromController:(UIViewController *)controller;
 - (NSString *)distanceStringFromLocation: (CLLocation *) newLocation;
-- (CtquanUser *)signinFromController: (UIViewController *)controller;
 - (void)getNearbyInvitationsFromController: (UIViewController *)controller;
-- (CtquanUser *)signinWith:(NSString *)email andPassword:(NSString *)password fromController:(id)controller;
+- (void)updateWith:(NSDictionary *)params FromController:(UIViewController *)controller;
+- (CtquanUser *)signInWith:(NSString *)email andPassword:(NSString *)password FromController:(id)controller;
 - (void)sendInvitationWithContent: (NSString *)content andDuration: (NSNumber *)newDuration FromController: (UIViewController *)controller;
 
 @end

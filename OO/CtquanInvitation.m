@@ -10,7 +10,7 @@
 
 @implementation CtquanInvitation
 
-@synthesize location, content, endTime;
+@synthesize location, content, endTime, user;
 
 - (NSString *)endTimeString {
 	return [NSString stringWithFormat:@"%1.1f小时", [endTime timeIntervalSinceNow]/3600];
@@ -18,12 +18,14 @@
 
 - (CtquanInvitation *)initWithDictionary: (NSDictionary *)dict {
 	self = [super init];
+	NSDictionary *invitation = [dict objectForKey:@"invitation"];
 	if (self) {
 		location = [[CLLocation alloc]
-								initWithLatitude:[[dict objectForKey:@"latitude"] doubleValue]
-											 longitude:[[dict objectForKey:@"longitude"] doubleValue]];
-		content = [[NSString alloc] initWithString:[dict objectForKey:@"content"]];
-		endTime = [[NSDate alloc] initWithTimeIntervalSince1970:[[dict objectForKey:@"end_time"] intValue]];
+								initWithLatitude:[[invitation objectForKey:@"latitude"] doubleValue]
+											 longitude:[[invitation objectForKey:@"longitude"] doubleValue]];
+		content = [[NSString alloc] initWithString:[invitation objectForKey:@"content"]];
+		endTime = [[NSDate alloc] initWithTimeIntervalSince1970:[[invitation objectForKey:@"end_time"] intValue]];
+		user = [[CtquanUser alloc] initWithDictionary:[dict objectForKey:@"user"]];
 	}
 	return self;
 }
