@@ -18,24 +18,18 @@
 
 @implementation CtquanUserInfoEditViewController
 
-@synthesize textField;
+@synthesize text, type, textField;
 
 - (void)viewDidLoad {
 	[textField becomeFirstResponder];
-	CtquanUser *currentUser = [CtquanUser current];
-	if (textField.tag == 1) textField.text = currentUser.name;
-	else textField.text = currentUser.username;
-		
+	textField.text = text;
 	[super viewDidLoad];
 }
 
 - (IBAction)saveButtonPressed:(UIButton *)sender {
-	NSString *type;
-	if (sender.tag == 1) type = @"name";
-	else type = @"username";
-	NSString *key = [NSString stringWithFormat:@"user[%@]", type];
-	NSDictionary *params = [NSDictionary dictionaryWithObject:textField.text forKey:key];
-	[[CtquanUser current] updateWith:params FromController:self];
+	NSDictionary *params = [NSDictionary dictionaryWithObject:textField.text forKey:type];
+	if ([textField.text isEqualToString:text]) [self afterUpdated];
+	else [[CtquanUser current] updateWith:params FromController:self];
 }
 
 - (void)afterUpdated {

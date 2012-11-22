@@ -202,12 +202,12 @@
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <imageView contentMode="scaleToFill" id="BDT-RI-ebW" customClass="CtquanAvatarView">
-                                                    <rect key="frame" x="171" y="8" width="80" height="80"/>
+                                                    <rect key="frame" x="181" y="8" width="80" height="80"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <gestureRecognizers/>
                                                 </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="YJS-J9-uS8">
-                                                    <rect key="frame" x="171" y="8" width="80" height="80"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="cJ8-Sf-bFA">
+                                                    <rect key="frame" x="205" y="26" width="0.0" height="0.0"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                     <state key="normal">
@@ -218,7 +218,7 @@
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
-                                                        <segue destination="bOH-fH-vhm" kind="modal" modalTransitionStyle="crossDissolve" id="WTh-mQ-uEt"/>
+                                                        <segue destination="bOH-fH-vhm" kind="modal" identifier="tapToShowBig" modalTransitionStyle="crossDissolve" id="zzf-be-9MM"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -253,10 +253,6 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <connections>
-                                            <segue destination="QT2-Z7-Mer" kind="push" id="Www-CH-wRa"/>
-                                            <segue destination="QT2-Z7-Mer" kind="push" trigger="accessoryAction" id="e4Q-fI-FmJ"/>
-                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="0DA-LR-0o9" detailTextLabel="LfG-kE-Ls8" style="IBUITableViewCellStyleValue1" id="jDu-2W-TsG">
                                         <rect key="frame" x="0.0" y="174" width="320" height="45"/>
@@ -282,10 +278,6 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <connections>
-                                            <segue destination="9c5-qa-QUn" kind="push" id="Pij-jj-qfN"/>
-                                            <segue destination="9c5-qa-QUn" kind="push" trigger="accessoryAction" id="AnK-oR-87L"/>
-                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -325,9 +317,9 @@
         <!--Ctquan User Info Edit View Controller - 更改姓名-->
         <scene sceneID="may-Ez-fng">
             <objects>
-                <viewController id="QT2-Z7-Mer" customClass="CtquanUserInfoEditViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="userInfoEdit" id="QT2-Z7-Mer" customClass="CtquanUserInfoEditViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fr1-b1-uQC">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="ILp-rc-NIp">
@@ -395,83 +387,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M90-be-kxe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1292" y="-1082"/>
-        </scene>
-        <!--Table View Controller-->
-        <scene sceneID="qFK-6G-fsO">
-            <objects>
-                <tableViewController id="Vmn-wB-GUE" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="cyz-yc-6vN">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <sections>
-                            <tableViewSection headerTitle="Section-1" id="F8c-Wh-u6U">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="HMW-CM-Xf0">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
-                        <connections>
-                            <outlet property="dataSource" destination="Vmn-wB-GUE" id="wUt-Hs-bzu"/>
-                            <outlet property="delegate" destination="Vmn-wB-GUE" id="K3H-qF-8sD"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="PHR-5z-ncE" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-855" y="-1056"/>
-        </scene>
-        <!--Ctquan User Info Edit View Controller - 更改用户名-->
-        <scene sceneID="Lcy-gR-ZFD">
-            <objects>
-                <viewController id="9c5-qa-QUn" customClass="CtquanUserInfoEditViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="lx0-g9-EEd">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="KtA-Fg-5po">
-                                <rect key="frame" x="20" y="48" width="280" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
-                            </textField>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="更改用户名" id="gws-1q-dS1">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="eZ0-po-KJz">
-                            <button key="customView" opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="G2r-Ga-mEl">
-                                <rect key="frame" x="255" y="7" width="60" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="保存">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="saveButtonPressed:" destination="9c5-qa-QUn" eventType="touchUpInside" id="AAm-R0-uMZ"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="textField" destination="KtA-Fg-5po" id="onM-Bg-8kA"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Mzw-0H-NAi" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-535" y="-429"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="7k6-X6-VSQ">
@@ -813,6 +728,20 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5FO-n5-cbJ">
+                                        <rect key="frame" x="20" y="20" width="133" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xse-Wt-1ba">
+                                        <rect key="frame" x="184" y="20" width="116" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <connections>
@@ -825,6 +754,8 @@
                     <navigationItem key="navigationItem" id="wyQ-SA-BaB"/>
                     <connections>
                         <outlet property="errorMessageLabel" destination="sbW-Mm-xr2" id="Re1-eM-lg6"/>
+                        <outlet property="latitude" destination="5FO-n5-cbJ" id="9IB-0b-e0l"/>
+                        <outlet property="longitude" destination="xse-Wt-1ba" id="Kah-8Q-S91"/>
                         <outlet property="textField" destination="kMn-ch-TZd" id="3f6-NL-Pfj"/>
                     </connections>
                 </viewController>
@@ -1038,7 +969,11 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CtquanInvitationViewController.h"/>
             <relationships>
                 <relationship kind="action" name="backgroundTap:" candidateClass="UIControl"/>
+                <relationship kind="action" name="durationButtonPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="sendButtonPressed:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="errorMessageLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="latitude" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="longitude" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="textField" candidateClass="UITextView"/>
             </relationships>
         </class>
@@ -1102,7 +1037,5 @@
     <inferredMetricsTieBreakers>
         <segue reference="oAi-oS-Dfh"/>
         <segue reference="l7e-zO-ulX"/>
-        <segue reference="e4Q-fI-FmJ"/>
-        <segue reference="Pij-jj-qfN"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -37,6 +37,7 @@
 		184967F416539658007DB9C4 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 184967F316539658007DB9C4 /* Security.framework */; };
 		184968A116539A49007DB9C4 /* CtquanSignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 184968A016539A49007DB9C4 /* CtquanSignInViewController.m */; };
 		184968A316539A6E007DB9C4 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 184968A216539A6E007DB9C4 /* MainStoryboard.storyboard */; };
+		186894B4165DF14F005AF00E /* add_avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 186894B3165DF14F005AF00E /* add_avatar.png */; };
 		18823240165CBF1D00F05833 /* CtquanAvatarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1882323F165CBF1D00F05833 /* CtquanAvatarView.m */; };
 		1882623A165BDE93002C66F9 /* CtquanSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18826239165BDE93002C66F9 /* CtquanSignUpViewController.m */; };
 		18B90811165A3EFA00B8D4B4 /* CtquanScreeningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B90810165A3EFA00B8D4B4 /* CtquanScreeningViewController.m */; };
@@ -137,6 +138,7 @@
 		1849689F16539A49007DB9C4 /* CtquanSignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CtquanSignInViewController.h; sourceTree = "<group>"; };
 		184968A016539A49007DB9C4 /* CtquanSignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CtquanSignInViewController.m; sourceTree = "<group>"; };
 		184968A216539A6E007DB9C4 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
+		186894B3165DF14F005AF00E /* add_avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add_avatar.png; sourceTree = "<group>"; };
 		1882323E165CBF1D00F05833 /* CtquanAvatarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CtquanAvatarView.h; sourceTree = "<group>"; };
 		1882323F165CBF1D00F05833 /* CtquanAvatarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CtquanAvatarView.m; sourceTree = "<group>"; };
 		18826238165BDE93002C66F9 /* CtquanSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CtquanSignUpViewController.h; sourceTree = "<group>"; };
@@ -355,6 +357,7 @@
 			children = (
 				18006349165DB0040013DC89 /* baiduMap */,
 				18E675E21656444D000C66C4 /* avatar.png */,
+				186894B3165DF14F005AF00E /* add_avatar.png */,
 				1849673B165394B1007DB9C4 /* OO-Info.plist */,
 				1849673C165394B1007DB9C4 /* InfoPlist.strings */,
 				1849673F165394B1007DB9C4 /* main.m */,
@@ -426,6 +429,7 @@
 				184968A316539A6E007DB9C4 /* MainStoryboard.storyboard in Resources */,
 				18E675E31656444D000C66C4 /* avatar.png in Resources */,
 				1800636A165DB0690013DC89 /* mapapi.bundle in Resources */,
+				186894B4165DF14F005AF00E /* add_avatar.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -536,7 +540,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OO/OO-Prefix.pch";
 				INFOPLIST_FILE = "OO/OO-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../../../Downloads/BaiduMapApi_All_iOS_1.2.2/BaiduMapApi_Lib_iOS_1.2.2/libs/Release-iphonesimulator\"",
@@ -554,7 +558,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OO/OO-Prefix.pch";
 				INFOPLIST_FILE = "OO/OO-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../../../Downloads/BaiduMapApi_All_iOS_1.2.2/BaiduMapApi_Lib_iOS_1.2.2/libs/Release-iphonesimulator\"",

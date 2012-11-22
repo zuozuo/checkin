@@ -8,7 +8,6 @@
 
 #import "CtquanInvitationViewController.h"
 #import "CtquanNearbyUsersViewController.h"
-#import "BMapKit.h"
 
 @interface CtquanInvitationViewController ()
 
@@ -16,15 +15,23 @@
 
 @implementation CtquanInvitationViewController
 
-@synthesize duration, textField, errorMessageLabel;
+@synthesize search, mapView, duration, textField, errorMessageLabel;
+@synthesize latitude, longitude;
 
 - (void)viewDidLoad {
+	[super viewDidLoad];
+	mapView.delegate = (id)self;
+	search = [[BMKSearch alloc] init];
+	search.delegate = self;
+	[search reverseGeocode:[CtquanUser current].location.coordinate];
+	
+	CtquanUser *u = [CtquanUser current];
+	latitude.text = [NSString stringWithFormat:@"%f", u.location.coordinate.latitude];
+	longitude.text = [NSString stringWithFormat:@"%f", u.location.coordinate.longitude];
+	
 	UIButton *button = (UIButton *)[self.view viewWithTag:1];
 	button.backgroundColor = [UIColor blueColor];
 	duration = [NSNumber numberWithFloat:0.5];
-	[super viewDidLoad];
-	BMKMapView *mapView = [[BMKMapView alloc] initWithFrame:CGRectMake(0, 0, 320, 480)];
-	self.view = mapView;
 	UIScrollView *tempScrollView=(UIScrollView *)self.view;
 	tempScrollView.contentSize=CGSizeMake(320,640);
 }
@@ -58,6 +65,45 @@
 - (void)viewDidUnload {
 	[self setTextField:nil];
 	[self setErrorMessageLabel:nil];
+	[self setLatitude:nil];
+	[self setLongitude:nil];
 	[super viewDidUnload];
 }
+
+#pragma mark -
+#pragma mark BMKSearchDelegate methods
+- (void)onGetAddrResult:(BMKAddrInfo *)result errorCode:(int)error {
+	NSLog(@"%@", result);
+	NSLog(@"poi---------------%@", result.poiList);
+	NSLog(@"adr---------------%@", result.strAddr);
+	NSLog(@"com---------------%@", result.addressComponent.city);
+}
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

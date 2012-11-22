@@ -12,5 +12,7 @@
 @interface CtquanUserInfoEditViewController : UIViewController
 
 @property (strong, nonatomic) IBOutlet UITextField *textField;
+@property (strong, nonatomic) NSString *text;
+@property (strong, nonatomic) NSString *type;
 
 @end

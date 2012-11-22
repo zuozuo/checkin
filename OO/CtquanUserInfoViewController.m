@@ -6,8 +6,9 @@
 //  Copyright (c) 2012年 apple. All rights reserved.
 //
 
-#import "CtquanUserInfoViewController.h"
 #import <MobileCoreServices/UTCoreTypes.h>
+#import "CtquanUserInfoViewController.h"
+#import "CtquanUserInfoEditViewController.h"
 
 #define kPhotoLibraryButtonIndex 0
 #define kCameraButtonIndex 1
@@ -23,6 +24,18 @@
 - (void)viewDidLoad {
 	[avatarView setImageWithURL:[[CtquanUser current] thumbAvatarURL]];
 	[super viewDidLoad];
+	UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(avatarTapped:)];
+	tap.numberOfTapsRequired = 1;
+	tap.numberOfTouchesRequired = 1;
+	[self.avatarView addGestureRecognizer:tap];
+}
+
+- (void)avatarTapped:(UIGestureRecognizer *)recognizer {
+	if ([[CtquanUser current].avatar respondsToSelector:@selector(length)]) {
+		[self performSegueWithIdentifier:@"tapToShowBig" sender:self];
+	} else {
+		[self uploadAvatar];
+	}
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -131,7 +144,19 @@
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	if (indexPath.row == 0 && indexPath.section == 0) [self uploadAvatar];
+	if (indexPath.section == 0) [self uploadAvatar];
+	else {
+		CtquanUserInfoEditViewController *edit = [[CtquanStoryBoard main] instantiateViewControllerWithIdentifier:@"userInfoEdit"];
+		CtquanUser *currentUser = [CtquanUser current];
+		if (indexPath.row == 0) {
+			edit.text = currentUser.name;
+			edit.type = @"user[name]";
+		} else {
+			edit.text = currentUser.username;
+			edit.type = @"user[username]";
+		}
+		[self.navigationController pushViewController:edit animated:YES];
+	}
 }
 
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {

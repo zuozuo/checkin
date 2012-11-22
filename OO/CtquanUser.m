@@ -69,12 +69,25 @@
 }
 
 - (NSURL *)thumbAvatarURL {
-	return [NSURL URLWithString:[NSString stringWithFormat:@"http://localhost:3000/system/avatars//%@/thumb/%@?%f", user_id, avatar, [NSDate timeIntervalSinceReferenceDate]]];
+	if ([avatar respondsToSelector:@selector(length)]) {
+		return [NSURL URLWithString:[NSString stringWithFormat:@"http://localhost:3000/system/avatars//%@/thumb/%@?%d", user_id, avatar, [[NSNumber numberWithFloat:[NSDate timeIntervalSinceReferenceDate]] integerValue]]];
+	} else {
+		return [self defaultAvatarURL];
+	}
 }
 
 - (NSURL *)originalAvatarURL {
-	return [NSURL URLWithString:[NSString stringWithFormat:@"http://localhost:3000/system/avatars//%@/original/%@?%f", user_id, avatar, [NSDate timeIntervalSinceReferenceDate]]];
+	if ([avatar respondsToSelector:@selector(length)]) {
+		return [NSURL URLWithString:[NSString stringWithFormat:@"http://localhost:3000/system/avatars//%@/original/%@?%d", user_id, avatar, [[NSNumber numberWithFloat:[NSDate timeIntervalSinceReferenceDate]] integerValue]]];
+	} else {
+		return [self defaultAvatarURL];
+	}
 }
+
+- (NSURL *)defaultAvatarURL {
+	return [[NSBundle mainBundle] URLForResource:@"add_avatar" withExtension:@"png"];
+}
+
 
 - (void)signInLocation {
 	self.locationManager = [[CLLocationManager alloc] init];
