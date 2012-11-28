@@ -119,6 +119,7 @@
 }
 
 - (void)onGetAddrResult:(BMKAddrInfo*)result errorCode:(int)error {
+  [navTitle setTitle:result.strAddr forState:UIControlStateNormal];
 	NSLog(@"%@", result);
 	NSLog(@"222");
 }
