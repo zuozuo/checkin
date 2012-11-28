@@ -113,10 +113,8 @@
 #pragma mark BMKSearchDelegate methods
 
 - (void)onGetPoiResult:(NSArray *)poiResultList searchType:(int)type errorCode:(int)error	{
-	NSLog(@"%@", poiResultList);
 	if (error == BMKErrorOk) {
 		BMKPoiResult* result = [poiResultList objectAtIndex:0];
-		NSLog(@"%@", result);
 		locations = (NSMutableArray *)result.poiInfoList;
 		[locationTable reloadData];
 	}
@@ -144,10 +142,6 @@
 - (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
 }
 
-//- (void)viewDidUnload {
-//	[self setSearchBar:nil];
-//	[super viewDidUnload];
-//}
 - (void)viewDidUnload {
 	[self setNavTitle:nil];
 	[super viewDidUnload];
