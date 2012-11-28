@@ -20,6 +20,7 @@
 		184584421653FCA20088450D /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 184584381653FCA20088450D /* AFXMLRequestOperation.m */; settings = {COMPILER_FLAGS = "-fobjc-arc "; }; };
 		184584431653FCA20088450D /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 1845843A1653FCA20088450D /* UIImageView+AFNetworking.m */; settings = {COMPILER_FLAGS = "-fobjc-arc "; }; };
 		18458446165403EB0088450D /* CtquanClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 18458445165403EA0088450D /* CtquanClient.m */; };
+		1847A8861666404B003FA404 /* libbaidumapapi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1847A8851666404B003FA404 /* libbaidumapapi.a */; };
 		18496732165394B1007DB9C4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18496731165394B1007DB9C4 /* UIKit.framework */; };
 		18496734165394B1007DB9C4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18496733165394B1007DB9C4 /* Foundation.framework */; };
 		18496736165394B1007DB9C4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18496735165394B1007DB9C4 /* CoreGraphics.framework */; };
@@ -37,7 +38,7 @@
 		184968A116539A49007DB9C4 /* CtquanSignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 184968A016539A49007DB9C4 /* CtquanSignInViewController.m */; };
 		184968A316539A6E007DB9C4 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 184968A216539A6E007DB9C4 /* MainStoryboard.storyboard */; };
 		186894B4165DF14F005AF00E /* add_avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 186894B3165DF14F005AF00E /* add_avatar.png */; };
-		186894C0165E01EA005AF00E /* libbaidumapapi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 186894BF165E01E9005AF00E /* libbaidumapapi.a */; };
+		186894C0165E01EA005AF00E /* libbaidumapapi in Frameworks */ = {isa = PBXBuildFile; fileRef = 186894BF165E01E9005AF00E /* libbaidumapapi */; };
 		186894C3165E2554005AF00E /* CtquanLocationsViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 186894C2165E2554005AF00E /* CtquanLocationsViewController.mm */; };
 		18823240165CBF1D00F05833 /* CtquanAvatarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1882323F165CBF1D00F05833 /* CtquanAvatarView.m */; };
 		1882623A165BDE93002C66F9 /* CtquanSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18826239165BDE93002C66F9 /* CtquanSignUpViewController.m */; };
@@ -118,6 +119,7 @@
 		1845843A1653FCA20088450D /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
 		18458444165403EA0088450D /* CtquanClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CtquanClient.h; path = ../CtquanClient.h; sourceTree = "<group>"; };
 		18458445165403EA0088450D /* CtquanClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CtquanClient.m; path = ../CtquanClient.m; sourceTree = "<group>"; };
+		1847A8851666404B003FA404 /* libbaidumapapi.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libbaidumapapi.a; sourceTree = "<group>"; };
 		1849672D165394B1007DB9C4 /* OO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18496731165394B1007DB9C4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		18496733165394B1007DB9C4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -140,7 +142,7 @@
 		184968A016539A49007DB9C4 /* CtquanSignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CtquanSignInViewController.m; sourceTree = "<group>"; };
 		184968A216539A6E007DB9C4 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		186894B3165DF14F005AF00E /* add_avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add_avatar.png; sourceTree = "<group>"; };
-		186894BF165E01E9005AF00E /* libbaidumapapi.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libbaidumapapi.a; sourceTree = "<group>"; };
+		186894BF165E01E9005AF00E /* libbaidumapapi */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libbaidumapapi; sourceTree = "<group>"; };
 		186894C1165E2554005AF00E /* CtquanLocationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CtquanLocationsViewController.h; path = ../CtquanLocationsViewController.h; sourceTree = "<group>"; };
 		186894C2165E2554005AF00E /* CtquanLocationsViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CtquanLocationsViewController.mm; path = ../CtquanLocationsViewController.mm; sourceTree = "<group>"; };
 		1882323E165CBF1D00F05833 /* CtquanAvatarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CtquanAvatarView.h; sourceTree = "<group>"; };
@@ -198,7 +200,8 @@
 				18496734165394B1007DB9C4 /* Foundation.framework in Frameworks */,
 				18496736165394B1007DB9C4 /* CoreGraphics.framework in Frameworks */,
 				18496738165394B1007DB9C4 /* CoreData.framework in Frameworks */,
-				186894C0165E01EA005AF00E /* libbaidumapapi.a in Frameworks */,
+				186894C0165E01EA005AF00E /* libbaidumapapi in Frameworks */,
+				1847A8861666404B003FA404 /* libbaidumapapi.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,7 +367,8 @@
 		1849673A165394B1007DB9C4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				186894BF165E01E9005AF00E /* libbaidumapapi.a */,
+				1847A8851666404B003FA404 /* libbaidumapapi.a */,
+				186894BF165E01E9005AF00E /* libbaidumapapi */,
 				18006349165DB0040013DC89 /* baiduMap */,
 				18A7EEA71664BE8200EADE8C /* arrow.png */,
 				186894B3165DF14F005AF00E /* add_avatar.png */,
