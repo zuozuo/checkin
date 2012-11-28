@@ -15,19 +15,10 @@
 
 @implementation CtquanInvitationViewController
 
-@synthesize search, mapView, duration, textField, errorMessageLabel;
-@synthesize latitude, longitude;
+@synthesize duration, textField, errorMessageLabel;
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
-	mapView.delegate = (id)self;
-	[mapView setShowsUserLocation:YES];
-	search = [[BMKSearch alloc] init];
-	search.delegate = self;
-	[CtquanUser current].location = (CLLocation *)mapView.userLocation;
-	[search reverseGeocode:[CtquanUser current].location.coordinate];
-//	latitude.text = [NSString stringWithFormat:@"%f", location.coordinate.latitude];
-//	longitude.text = [NSString stringWithFormat:@"%f", location.coordinate.longitude];
 	
 	UIButton *button = (UIButton *)[self.view viewWithTag:1];
 	button.backgroundColor = [UIColor blueColor];
@@ -62,20 +53,12 @@
 	[super didReceiveMemoryWarning];
 }
 
-- (void)viewDidUnload {
-	[self setTextField:nil];
-	[self setErrorMessageLabel:nil];
-	[self setLatitude:nil];
-	[self setLongitude:nil];
-	[super viewDidUnload];
-}
+//- (void)viewDidUnload {
+////	[self setTextField:nil];
+////	[self setErrorMessageLabel:nil];
+//	[super viewDidUnload];
+//}
 
-#pragma mark -
-#pragma mark BMKSearchDelegate methods
-- (void)onGetAddrResult:(BMKAddrInfo *)result errorCode:(int)error {
-	NSLog(@"adr---------------%@", result.strAddr);
-	latitude.text = result.strAddr;
-}
 @end
 
 

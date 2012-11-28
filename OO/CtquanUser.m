@@ -15,6 +15,7 @@
 #define kUserIdKey @"user_id"
 #define kUsernameKey @"username"
 #define kPasswordKey @"password"
+#define kLocationKey @"location"
 
 #define kCurrentUserKey @"currentUser"
 
@@ -154,11 +155,16 @@
 
 - (void)getNearbyInvitationsFromController: (UIViewController *)controller {
 	CtquanClient *client = [CtquanClient sharedClient];
+	NSNumber *num = [NSNumber numberWithInteger:20];
+	if ([controller respondsToSelector:@selector(invitationsNumber)]) {
+		num = (NSNumber *)[controller performSelector:@selector(invitationsNumber)];
+	}
 	NSDictionary *params = [[NSDictionary alloc] initWithObjectsAndKeys:
-													[NSNumber numberWithFloat:self.location.coordinate.latitude], @"latitude",
-													[NSNumber numberWithFloat:self.location.coordinate.longitude], @"longitude",
+													[self latitude], @"latitude",
+													[self longitude], @"longitude",
 													distance, @"distance",
 													duration, @"duration",
+													num, @"num",
 													nil];
 	[client getPath:@"invitations" parameters:params
 					 success:^(AFHTTPRequestOperation *operation, id responseObject){
@@ -224,8 +230,8 @@
 																 nil];
 	[client postPath:path parameters:params
 																 success:^(AFHTTPRequestOperation *operation, id responseObject){
-																 	 if ([controller respondsToSelector:@selector(afterSignIn)])
-																		 [controller performSelector:@selector(afterSignIn)];
+																 	 if ([controller respondsToSelector:@selector(updateTableWith:)])
+																		 [controller performSelector:@selector(updateTableWith:) withObject:responseObject];
 																 }
 																 failure:^(AFHTTPRequestOperation *operation, NSError *error){
 																 	 NSLog(@"failure");

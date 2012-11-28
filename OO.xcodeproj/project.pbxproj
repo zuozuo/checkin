@@ -38,8 +38,11 @@
 		184968A316539A6E007DB9C4 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 184968A216539A6E007DB9C4 /* MainStoryboard.storyboard */; };
 		186894B4165DF14F005AF00E /* add_avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 186894B3165DF14F005AF00E /* add_avatar.png */; };
 		186894C0165E01EA005AF00E /* libbaidumapapi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 186894BF165E01E9005AF00E /* libbaidumapapi.a */; };
+		186894C3165E2554005AF00E /* CtquanLocationsViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 186894C2165E2554005AF00E /* CtquanLocationsViewController.mm */; };
 		18823240165CBF1D00F05833 /* CtquanAvatarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1882323F165CBF1D00F05833 /* CtquanAvatarView.m */; };
 		1882623A165BDE93002C66F9 /* CtquanSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18826239165BDE93002C66F9 /* CtquanSignUpViewController.m */; };
+		18A7EEA81664BE8200EADE8C /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 18A7EEA71664BE8200EADE8C /* arrow.png */; };
+		18A7EEAC1665B68C00EADE8C /* BMKMapView+Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A7EEAB1665B68C00EADE8C /* BMKMapView+Location.m */; };
 		18B90811165A3EFA00B8D4B4 /* CtquanScreeningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B90810165A3EFA00B8D4B4 /* CtquanScreeningViewController.m */; };
 		18BEA40C165CC1A400AF61C3 /* CtquanStoryBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BEA40B165CC1A300AF61C3 /* CtquanStoryBoard.m */; };
 		18BEA410165CCA9E00AF61C3 /* CtquanShowBigImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BEA40F165CCA9E00AF61C3 /* CtquanShowBigImageViewController.m */; };
@@ -139,10 +142,15 @@
 		184968A216539A6E007DB9C4 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		186894B3165DF14F005AF00E /* add_avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add_avatar.png; sourceTree = "<group>"; };
 		186894BF165E01E9005AF00E /* libbaidumapapi.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libbaidumapapi.a; sourceTree = "<group>"; };
+		186894C1165E2554005AF00E /* CtquanLocationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CtquanLocationsViewController.h; path = ../CtquanLocationsViewController.h; sourceTree = "<group>"; };
+		186894C2165E2554005AF00E /* CtquanLocationsViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CtquanLocationsViewController.mm; path = ../CtquanLocationsViewController.mm; sourceTree = "<group>"; };
 		1882323E165CBF1D00F05833 /* CtquanAvatarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CtquanAvatarView.h; sourceTree = "<group>"; };
 		1882323F165CBF1D00F05833 /* CtquanAvatarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CtquanAvatarView.m; sourceTree = "<group>"; };
 		18826238165BDE93002C66F9 /* CtquanSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CtquanSignUpViewController.h; sourceTree = "<group>"; };
 		18826239165BDE93002C66F9 /* CtquanSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CtquanSignUpViewController.m; sourceTree = "<group>"; };
+		18A7EEA71664BE8200EADE8C /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
+		18A7EEAA1665B68B00EADE8C /* BMKMapView+Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BMKMapView+Location.h"; sourceTree = "<group>"; };
+		18A7EEAB1665B68C00EADE8C /* BMKMapView+Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BMKMapView+Location.m"; sourceTree = "<group>"; };
 		18B9080F165A3EFA00B8D4B4 /* CtquanScreeningViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CtquanScreeningViewController.h; sourceTree = "<group>"; };
 		18B90810165A3EFA00B8D4B4 /* CtquanScreeningViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CtquanScreeningViewController.m; sourceTree = "<group>"; };
 		18BEA40A165CC1A300AF61C3 /* CtquanStoryBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CtquanStoryBoard.h; sourceTree = "<group>"; };
@@ -290,21 +298,21 @@
 		18496730165394B1007DB9C4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				18E4A182165B7F2900679D70 /* CoreImage.framework */,
-				18E4A180165B7F2000679D70 /* QuartzCore.framework */,
-				18E4A17E165B7F1400679D70 /* ImageIO.framework */,
-				18E4A17C165B7F0A00679D70 /* AssetsLibrary.framework */,
 				18E4A17A165B7EFB00679D70 /* Accelerate.framework */,
-				18E4A110165B6C2700679D70 /* MediaPlayer.framework */,
-				18C25B6E16556AF3003BE52D /* CoreLocation.framework */,
+				18E4A17C165B7F0A00679D70 /* AssetsLibrary.framework */,
 				184967EF16539647007DB9C4 /* CFNetwork.framework */,
-				18F1A66416553BDD00F8FC2A /* MobileCoreServices.framework */,
-				184967F11653964F007DB9C4 /* SystemConfiguration.framework */,
-				184967F316539658007DB9C4 /* Security.framework */,
-				18496731165394B1007DB9C4 /* UIKit.framework */,
-				18496733165394B1007DB9C4 /* Foundation.framework */,
-				18496735165394B1007DB9C4 /* CoreGraphics.framework */,
 				18496737165394B1007DB9C4 /* CoreData.framework */,
+				18496735165394B1007DB9C4 /* CoreGraphics.framework */,
+				18E4A182165B7F2900679D70 /* CoreImage.framework */,
+				18C25B6E16556AF3003BE52D /* CoreLocation.framework */,
+				18496733165394B1007DB9C4 /* Foundation.framework */,
+				18E4A17E165B7F1400679D70 /* ImageIO.framework */,
+				18E4A110165B6C2700679D70 /* MediaPlayer.framework */,
+				18F1A66416553BDD00F8FC2A /* MobileCoreServices.framework */,
+				18E4A180165B7F2000679D70 /* QuartzCore.framework */,
+				184967F316539658007DB9C4 /* Security.framework */,
+				184967F11653964F007DB9C4 /* SystemConfiguration.framework */,
+				18496731165394B1007DB9C4 /* UIKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -322,6 +330,8 @@
 				18F683991654F4C6004CD889 /* CtquanNearbyUsersViewController.m */,
 				18E675E41656481B000C66C4 /* CtquanInvitation.h */,
 				18E4A0F7165B4F8900679D70 /* CtquanAvatarViewController.h */,
+				186894C1165E2554005AF00E /* CtquanLocationsViewController.h */,
+				186894C2165E2554005AF00E /* CtquanLocationsViewController.mm */,
 				18E4A0F8165B4F8900679D70 /* CtquanAvatarViewController.m */,
 				18B9080F165A3EFA00B8D4B4 /* CtquanScreeningViewController.h */,
 				18B90810165A3EFA00B8D4B4 /* CtquanScreeningViewController.m */,
@@ -339,6 +349,8 @@
 				1882323E165CBF1D00F05833 /* CtquanAvatarView.h */,
 				1882323F165CBF1D00F05833 /* CtquanAvatarView.m */,
 				18BEA40A165CC1A300AF61C3 /* CtquanStoryBoard.h */,
+				18A7EEAA1665B68B00EADE8C /* BMKMapView+Location.h */,
+				18A7EEAB1665B68C00EADE8C /* BMKMapView+Location.m */,
 				18BEA40B165CC1A300AF61C3 /* CtquanStoryBoard.m */,
 				184968A216539A6E007DB9C4 /* MainStoryboard.storyboard */,
 				1819064B165C6F4F00362830 /* CtquanUserInfoViewController.h */,
@@ -357,6 +369,7 @@
 				186894BF165E01E9005AF00E /* libbaidumapapi.a */,
 				18006349165DB0040013DC89 /* baiduMap */,
 				18E675E21656444D000C66C4 /* avatar.png */,
+				18A7EEA71664BE8200EADE8C /* arrow.png */,
 				186894B3165DF14F005AF00E /* add_avatar.png */,
 				1849673B165394B1007DB9C4 /* OO-Info.plist */,
 				1849673C165394B1007DB9C4 /* InfoPlist.strings */,
@@ -430,6 +443,7 @@
 				18E675E31656444D000C66C4 /* avatar.png in Resources */,
 				1800636A165DB0690013DC89 /* mapapi.bundle in Resources */,
 				186894B4165DF14F005AF00E /* add_avatar.png in Resources */,
+				18A7EEA81664BE8200EADE8C /* arrow.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -467,6 +481,8 @@
 				18823240165CBF1D00F05833 /* CtquanAvatarView.m in Sources */,
 				18BEA40C165CC1A400AF61C3 /* CtquanStoryBoard.m in Sources */,
 				18BEA410165CCA9E00AF61C3 /* CtquanShowBigImageViewController.m in Sources */,
+				186894C3165E2554005AF00E /* CtquanLocationsViewController.mm in Sources */,
+				18A7EEAC1665B68C00EADE8C /* BMKMapView+Location.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
