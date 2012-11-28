@@ -32,8 +32,10 @@
 	search = [[BMKSearch alloc] init];
 	search.delegate = self;
 	[self performSelectorInBackground:@selector(getUserLocation) withObject:nil];
-	[search reverseGeocode:[CtquanUser current].location.coordinate];
-//	[search poiSearchInCity:@"北京" withKey:@"五道口" pageIndex:0];
+//	[search reverseGeocode:[CtquanUser current].location.coordinate];
+	[search poiMultiSearchNearBy:[NSArray arrayWithObjects:@"soho", nil] center:[CtquanUser current].location.coordinate radius:10000 pageIndex:0];
+//	[search poiSearchNearBy:@"大厦" center:[CtquanUser current].location.coordinate radius:10000 pageIndex:0];
+	
 }
 
 - (void)didReceiveMemoryWarning {
@@ -111,17 +113,17 @@
 #pragma mark BMKSearchDelegate methods
 
 - (void)onGetPoiResult:(NSArray *)poiResultList searchType:(int)type errorCode:(int)error	{
+	NSLog(@"%@", poiResultList);
 	if (error == BMKErrorOk) {
 		BMKPoiResult* result = [poiResultList objectAtIndex:0];
+		NSLog(@"%@", result);
 		locations = (NSMutableArray *)result.poiInfoList;
 		[locationTable reloadData];
 	}
 }
 
 - (void)onGetAddrResult:(BMKAddrInfo*)result errorCode:(int)error {
-  [navTitle setTitle:result.strAddr forState:UIControlStateNormal];
-	NSLog(@"%@", result);
-	NSLog(@"222");
+//  [navTitle setTitle:result.strAddr forState:UIControlStateNormal];
 }
 
 #pragma mark -
@@ -133,7 +135,7 @@
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
 	if (searchText.length == 0) return;
-	[search poiSearchInCity:@"北京" withKey:searchText pageIndex:0];
+	[search poiSearchNearBy:searchText center:[CtquanUser current].location.coordinate radius:5000 pageIndex:0];
 }
 
 - (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {

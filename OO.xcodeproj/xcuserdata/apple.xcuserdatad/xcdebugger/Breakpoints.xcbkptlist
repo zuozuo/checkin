@@ -264,11 +264,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "CtquanLocationsViewController.mm"
-         timestampString = "375788493.98872"
+         timestampString = "375798427.139294"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "44"
-         endingLineNumber = "44"
+         startingLineNumber = "46"
+         endingLineNumber = "46"
          landmarkName = "-tableView:numberOfRowsInSection:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -394,12 +394,25 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "CtquanLocationsViewController.mm"
-         timestampString = "375788720.039416"
+         timestampString = "375798427.139294"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "123"
-         endingLineNumber = "123"
+         startingLineNumber = "126"
+         endingLineNumber = "126"
          landmarkName = "-onGetAddrResult:errorCode:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "CtquanLocationsViewController.mm"
+         timestampString = "375798427.139294"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "116"
+         endingLineNumber = "116"
+         landmarkName = "-onGetPoiResult:searchType:errorCode:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
